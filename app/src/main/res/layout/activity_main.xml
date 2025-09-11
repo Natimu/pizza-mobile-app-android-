@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/secondary_color"
+    android:background="@drawable/background"
+    android:tileMode="repeat"
+
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -20,12 +22,12 @@
             android:textColor="@color/secondary_color"
             android:fontFamily="sans-serif"
             android:textStyle="bold"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:padding="0sp"
-            android:text="@string/wow_pizza_header" />
+            android:text="@string/cheezy_town" />
 
     </LinearLayout>
 
@@ -46,8 +48,6 @@
                 android:id="@+id/welcome_layout"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:backgroundTint="@color/secondary_color"
-                android:background="@drawable/rounded_background"
                 >
 
                 <TextView
@@ -61,7 +61,20 @@
                     android:text="@string/hello_welcome_back"
                     android:visibility="visible" />
             </LinearLayout>
+
+
+
+
             <!-- Pizza card -->
+            <TextView
+                android:id="@+id/pizzaCard"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="11"
+                android:textSize="20sp"
+                android:text="@string/pizza"
+
+                />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -72,11 +85,10 @@
                 <LinearLayout
                     android:id="@+id/pizza_layout"
                     android:padding="10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
                     android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
-
                     <LinearLayout
                         android:layout_marginEnd="5dp"
                         android:layout_width="130dp"
@@ -88,13 +100,89 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/margherita"
+                            android:contentDescription="@string/margherita_pizza"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/margherita"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginEnd="5dp"
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/card">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/pepperoni"
+                            android:contentDescription="@string/pepperoni_pizza1"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textAlignment="center"
+                            android:text="@string/pepperoni"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginEnd="5dp"
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/card">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/quattroformaggi"
+                            android:contentDescription="@string/quattro_formaggi_pizza"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textAlignment="center"
+                            android:text="@string/quattro_formaggi"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginEnd="5dp"
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/card">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/vegetariana"
+                            android:contentDescription="@string/vegetariana_pizza"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textAlignment="center"
+                            android:text="@string/vegetariana"/>
 
                     </LinearLayout>
 
@@ -109,13 +197,42 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/cheese"
+                            android:contentDescription="@string/cheese_pizza"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/cheese"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginEnd="5dp"
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/card">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/hawain"
+                            android:contentDescription="@string/hawaiian_pizza"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textAlignment="center"
+                            android:text="@string/hawaiian"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -129,13 +246,17 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/chicago"
+                            android:contentDescription="@string/chicago_style_pizza"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/chicago_style"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -149,13 +270,17 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/ham"
+                            android:contentDescription="@string/caprese_style_pizza"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/caprese_style"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -169,29 +294,44 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/vegan"
+                            android:contentDescription="@string/veggie_pizza"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/vegan"/>
 
                     </LinearLayout>
                 </LinearLayout>
             </HorizontalScrollView>
 
 
-            <!-- Wings cards-->
+
+            <!-- Pasta card -->
+            <TextView
+                android:id="@+id/pastaCard"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="11"
+                android:textSize="20sp"
+                android:text="@string/pasta"
+                />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="none">
+
+
                 <LinearLayout
-                    android:id="@+id/wing_layout"
+                    android:id="@+id/pasta_layout"
                     android:padding="10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
                     android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -207,13 +347,43 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/spaghettiaglioeolio"
+                            android:contentDescription="@string/spaghetti_aglio_e_olio"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/spaghetti_aglioo"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginEnd="5dp"
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/card">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/cheeseraviolial"
+                            android:contentDescription="@string/cheese_ravioli_pasta"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textAlignment="center"
+                            android:text="@string/cheese_raviolii"/>
+
                     </LinearLayout>
                     <LinearLayout
                         android:layout_marginEnd="5dp"
@@ -226,13 +396,18 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/fettuccinealfredo"
+                            android:contentDescription="@string/fettuccine_alfredo_pasta"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/fettuccine_alfredo"/>
+
                     </LinearLayout>
                     <LinearLayout
                         android:layout_marginEnd="5dp"
@@ -245,13 +420,18 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/lasagna"
+                            android:contentDescription="@string/lasagna_alla_bolognese"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/lasagna"/>
+
                     </LinearLayout>
                     <LinearLayout
                         android:layout_marginEnd="5dp"
@@ -264,13 +444,18 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/pennearrabbiata"
+                            android:contentDescription="@string/pennearr_abbiata"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/penne_arrabbiata"/>
+
                     </LinearLayout>
                     <LinearLayout
                         android:layout_marginEnd="5dp"
@@ -283,32 +468,44 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/daryasheydel"
+                            android:contentDescription="@string/hawaiian_pizza"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
-                    </LinearLayout>
+                            android:text="@string/pasta_with_marinara_sauce"/>
 
+                    </LinearLayout>
                 </LinearLayout>
             </HorizontalScrollView>
-
-
-
 
 
             <!-- side cards-->
 
+            <TextView
+                android:id="@+id/sideCard"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="11"
+                android:textSize="20sp"
+                android:text="Side Dishes"
+                />
+
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="none">
+
+
                 <LinearLayout
                     android:id="@+id/side_layout"
                     android:padding="10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
                     android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -324,13 +521,43 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/garlicbread"
+                            android:contentDescription="@string/spaghetti_aglio_e_olio"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/spaghetti_aglioo"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginEnd="5dp"
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/card">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/stuffedmushrooms"
+                            android:contentDescription="@string/cheese_ravioli_pasta"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textAlignment="center"
+                            android:text="@string/cheese_raviolii"/>
+
                     </LinearLayout>
                     <LinearLayout
                         android:layout_marginEnd="5dp"
@@ -343,13 +570,18 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/focaccia"
+                            android:contentDescription="@string/fettuccine_alfredo_pasta"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/fettuccine_alfredo"/>
+
                     </LinearLayout>
                     <LinearLayout
                         android:layout_marginEnd="5dp"
@@ -362,13 +594,18 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/friedcalamari"
+                            android:contentDescription="@string/lasagna_alla_bolognese"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/lasagna"/>
+
                     </LinearLayout>
                     <LinearLayout
                         android:layout_marginEnd="5dp"
@@ -381,13 +618,18 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/antipastoplatter"
+                            android:contentDescription="@string/pennearr_abbiata"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/penne_arrabbiata"/>
+
                     </LinearLayout>
                     <LinearLayout
                         android:layout_marginEnd="5dp"
@@ -400,13 +642,43 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="5dp"
-                            android:contentDescription="TODO" />
+                            android:src="@drawable/arancini"
+                            android:contentDescription="@string/hawaiian_pizza"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textAlignment="center"
-                            android:text="cheese"/>
+                            android:text="@string/pasta_with_marinara_sauce"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginEnd="5dp"
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/card">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/capreesesalad"
+                            android:contentDescription="@string/hawaiian_pizza"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_corner"
+                            android:clipToOutline="true"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textAlignment="center"
+                            android:text="@string/pasta_with_marinara_sauce"/>
+
                     </LinearLayout>
                 </LinearLayout>
             </HorizontalScrollView>
@@ -565,6 +837,8 @@
             </HorizontalScrollView>
 
         </LinearLayout>
+
+
     </ScrollView>
 
 </LinearLayout>

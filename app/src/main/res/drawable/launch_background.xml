@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background color -->
+    <item android:drawable="@color/white" />
+
+    <!-- Fullscreen image -->
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/cheezytown" />
+    </item>
+
+</layer-list>
