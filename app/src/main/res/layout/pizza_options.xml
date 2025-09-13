@@ -176,7 +176,7 @@
             </Button>
 
             <Button
-                android:id="@+id/clearCheckout"
+                android:id="@+id/Checkout"
                 style="?android:attr/buttonBarButtonStyle"
                 android:backgroundTint="@color/checkout"
                 android:layout_width="150dp"

@@ -62,4 +62,13 @@
     <string name="checkout">Checkout</string>
     <string name="total_price">Total Price: </string>
     <string name="totalitems">Total Items: </string>
+    <string name="stuffed_mushrooms">Stuffed Mushrooms</string>
+    <string name="stuffed_mushroomss">Stuffed Mushrooms</string>
+    <string name="focaccia1">focaccia</string>
+    <string name="focaccia">Focaccia</string>
+    <string name="fried_calamari">Fried Calamari</string>
+    <string name="fried_calamari1">fried calamari</string>
+    <string name="antipastoplatter1">antipasto platter</string>
+    <string name="antipasto_platter">Antipasto Platter</string>
+    <string name="garlic_bread">Garlic Bread</string>
 </resources>
