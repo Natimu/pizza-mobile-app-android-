@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.wowpizza"
+    namespace = "com.example.cheezytown"
     compileSdk = 36
 
     defaultConfig {

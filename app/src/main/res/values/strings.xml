@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">WOW Pizza</string>
-    <string name="wow_pizza_header">WOW Pizza</string>
+    <string name="app_name">Cheezy Town</string>
     <string name="hello_welcome_back">Hello, Welcome back!</string>
     <string name="cheezy_town">Cheezy Town</string>
     <string name="pizza">Pizza</string>
@@ -41,4 +40,26 @@
     <string name="vegetariana_pizza">vegetariana Pizza</string>
     <string name="vegetariana">Vegetariana</string>
     <string name="vegan">Vegan</string>
+    <string name="side_dishes">Side Dishes</string>
+    <string name="header_image">header image</string>
+    <string name="smallbutton">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="extra_large">Extra Large</string>
+    <string name="extra_cheese">Extra Cheese</string>
+    <string name="pepperoni1">Pepperoni</string>
+    <string name="mushroom">Mushroom</string>
+    <string name="groundbeef">Ground Beef</string>
+    <string name="banana_peppers">Banana Peppers</string>
+    <string name="bacon">Bacon</string>
+    <string name="pick_the_pizza_size">pick the pizza size</string>
+    <string name="size">Size</string>
+    <string name="becon">Becon</string>
+    <string name="toppings">Toppings</string>
+    <string name="grilled_chicken">Grilled Chicken</string>
+    <string name="number_of_pizza">Number of pizza</string>
+    <string name="clear">Clear</string>
+    <string name="checkout">Checkout</string>
+    <string name="total_price">Total Price: </string>
+    <string name="totalitems">Total Items: </string>
 </resources>

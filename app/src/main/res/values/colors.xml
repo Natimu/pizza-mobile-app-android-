@@ -2,8 +2,11 @@
 <resources>
     <color name="primary_color">#0f1307</color>
     <color name="secondary_color">#dddeb8</color>
-    <color name="text_color1">#aa6f50</color>
-    <color name="text_color2">#4E504C2F</color>
+    <color name="text_color1">#D52104</color>
+    <color name="text_color2">#62504C2F</color>
+    <color name="text_color3">#EA262616</color>
+    <color name="checkout">#C51C430F</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

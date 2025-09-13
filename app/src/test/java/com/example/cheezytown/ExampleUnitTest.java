@@ -1,4 +1,4 @@
-package com.example.wowpizza;
+package com.example.cheezytown;
 
 import org.junit.Test;
 
