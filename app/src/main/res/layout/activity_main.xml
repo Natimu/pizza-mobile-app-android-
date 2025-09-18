@@ -87,6 +87,8 @@
                         android:layout_width="130dp"
                         android:layout_height="150dp"
                         android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:background="@drawable/card">
 
                         <ImageView
@@ -97,7 +99,7 @@
                             android:contentDescription="@string/margherita_pizza"
                             android:scaleType="centerCrop"
                             android:background="@drawable/rounded_corner"
-                            android:clipToOutline="true"/>
+                            android:clipToOutline="true" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -114,6 +116,8 @@
                         android:layout_width="130dp"
                         android:layout_height="150dp"
                         android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:background="@drawable/card">
 
                         <ImageView
@@ -139,6 +143,8 @@
                         android:layout_width="130dp"
                         android:layout_height="150dp"
                         android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:background="@drawable/card">
 
                         <ImageView
@@ -164,6 +170,8 @@
                         android:layout_width="130dp"
                         android:layout_height="150dp"
                         android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:background="@drawable/card">
 
                         <ImageView
@@ -190,6 +198,8 @@
                         android:layout_width="130dp"
                         android:layout_height="150dp"
                         android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:background="@drawable/card">
 
                         <ImageView
@@ -213,318 +223,6 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
-
-
-            <!-- Pasta card -->
-            <TextView
-                android:id="@+id/pastaCard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:layout_marginStart="20dp"
-                android:text="@string/pasta"
-                />
-
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="none">
-
-
-                <LinearLayout
-                    android:id="@+id/pasta_layout"
-                    android:padding="10dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:id="@+id/spaghetti_aglioo"
-                        android:layout_marginEnd="5dp"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:orientation="vertical"
-                        android:background="@drawable/card">
-
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/spaghettiaglioeolio"
-                            android:contentDescription="@string/spaghetti_aglio_e_olio"
-                            android:scaleType="centerCrop"
-                            android:background="@drawable/rounded_corner"
-                            android:clipToOutline="true"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:text="@string/spaghetti_aglioo"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/cheese_raviolii"
-                        android:layout_marginEnd="5dp"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:orientation="vertical"
-                        android:background="@drawable/card">
-
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/cheeseraviolial"
-                            android:contentDescription="@string/cheese_ravioli_pasta"
-                            android:scaleType="centerCrop"
-                            android:background="@drawable/rounded_corner"
-                            android:clipToOutline="true"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:text="@string/cheese_raviolii"/>
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/fettuccine_alfredo"
-                        android:layout_marginEnd="5dp"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:orientation="vertical"
-                        android:background="@drawable/card">
-
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/fettuccinealfredo"
-                            android:contentDescription="@string/fettuccine_alfredo_pasta"
-                            android:scaleType="centerCrop"
-                            android:background="@drawable/rounded_corner"
-                            android:clipToOutline="true"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:text="@string/fettuccine_alfredo"/>
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/lasagna"
-                        android:layout_marginEnd="5dp"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:orientation="vertical"
-                        android:background="@drawable/card">
-
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/lasagna"
-                            android:contentDescription="@string/lasagna_alla_bolognese"
-                            android:scaleType="centerCrop"
-                            android:background="@drawable/rounded_corner"
-                            android:clipToOutline="true"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:text="@string/lasagna"/>
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/penne_arrabbiata"
-                        android:layout_marginEnd="5dp"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:orientation="vertical"
-                        android:background="@drawable/card">
-
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/pennearrabbiata"
-                            android:contentDescription="@string/pennearr_abbiata"
-                            android:scaleType="centerCrop"
-                            android:background="@drawable/rounded_corner"
-                            android:clipToOutline="true"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:text="@string/penne_arrabbiata"/>
-
-                    </LinearLayout>
-                </LinearLayout>
-            </HorizontalScrollView>
-
-
-            <!-- side cards-->
-
-            <TextView
-                android:id="@+id/sideCard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-
-                android:layout_marginStart="20dp"
-                android:text="@string/side_dishes"
-                />
-
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="none">
-
-
-                <LinearLayout
-                    android:id="@+id/side_layout"
-                    android:padding="10dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:id="@+id/garlic_bread"
-                        android:layout_marginEnd="5dp"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:orientation="vertical"
-                        android:background="@drawable/card">
-
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/garlicbread"
-                            android:contentDescription="@string/garlic_bread"
-                            android:scaleType="centerCrop"
-                            android:background="@drawable/rounded_corner"
-                            android:clipToOutline="true"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:text="@string/garlic_bread"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/stuffed_mushrooms"
-                        android:layout_marginEnd="5dp"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:orientation="vertical"
-                        android:background="@drawable/card">
-
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/stuffedmushrooms"
-                            android:contentDescription="@string/stuffed_mushroomss"
-                            android:scaleType="centerCrop"
-                            android:background="@drawable/rounded_corner"
-                            android:clipToOutline="true"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:text="@string/stuffed_mushrooms"/>
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/focaccia"
-                        android:layout_marginEnd="5dp"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:orientation="vertical"
-                        android:background="@drawable/card">
-
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/focaccia"
-                            android:contentDescription="@string/focaccia1"
-                            android:scaleType="centerCrop"
-                            android:background="@drawable/rounded_corner"
-                            android:clipToOutline="true"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:text="@string/focaccia"/>
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/fried_calamari"
-                        android:layout_marginEnd="5dp"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:orientation="vertical"
-                        android:background="@drawable/card">
-
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/friedcalamari"
-                            android:contentDescription="@string/fried_calamari1"
-                            android:scaleType="centerCrop"
-                            android:background="@drawable/rounded_corner"
-                            android:clipToOutline="true"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:text="@string/fried_calamari"/>
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/antipasto_platter"
-                        android:layout_marginEnd="5dp"
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:orientation="vertical"
-                        android:background="@drawable/card">
-
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/antipastoplatter"
-                            android:contentDescription="@string/antipastoplatter1"
-                            android:scaleType="centerCrop"
-                            android:background="@drawable/rounded_corner"
-                            android:clipToOutline="true"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:textAlignment="center"
-                            android:text="@string/antipasto_platter"/>
-
-                    </LinearLayout>
-                </LinearLayout>
-            </HorizontalScrollView>
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -539,6 +237,13 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:orientation="vertical">
+            <TextView
+                android:id="@+id/selectedPizzaDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/selected_pizza"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/text_color3"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -547,6 +252,7 @@
                 android:textColor="@color/text_color1"
                 android:textSize="20sp" />
             <RadioGroup
+                android:id="@+id/radioForPizzaSize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
@@ -558,25 +264,26 @@
                     android:id="@+id/smallPizza"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:checked="true"
                     android:text="@string/smallbutton" />
 
                 <RadioButton
                     android:id="@+id/mediumPizza"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/medium" />
+                    android:text="@string/medium_n_3_99" />
 
                 <RadioButton
                     android:id="@+id/largePizza"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/large" />
+                    android:text="@string/large_n_5_99" />
 
                 <RadioButton
                     android:id="@+id/eLargePizza"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/extra_large" />
+                    android:text="@string/extra_large_n_7_99" />
             </RadioGroup>
 
             <EditText
@@ -595,6 +302,13 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 tools:ignore="NestedWeights">
+                <TextView
+                    android:id="@+id/selectedPizzaPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/text_color3"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -604,7 +318,7 @@
                     android:textSize="20sp" />
 
                 <CheckBox
-                    android:id="@+id/bananaPeppersTopping"
+                    android:id="@+id/baconTopping"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
@@ -618,7 +332,7 @@
                     android:text="@string/grilled_chicken" />
 
                 <CheckBox
-                    android:id="@+id/GroundBeefTopping"
+                    android:id="@+id/groundBeefTopping"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
@@ -632,7 +346,7 @@
                     android:text="@string/mushroom" />
 
                 <CheckBox
-                    android:id="@+id/PepperoniTopping"
+                    android:id="@+id/pepperoniTopping"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
@@ -657,16 +371,16 @@
                 android:padding="20dp">
 
                 <TextView
-                    android:id="@+id/totalPriceView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/total_price"/>
-                <TextView
                     android:id="@+id/totalItemsView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/totalitems"/>
 
+                <TextView
+                    android:id="@+id/totalPriceView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/total_price"/>
             </LinearLayout>
             <LinearLayout
                 style="?android:attr/buttonBarStyle"

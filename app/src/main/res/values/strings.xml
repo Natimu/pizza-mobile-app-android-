@@ -71,4 +71,10 @@
     <string name="antipastoplatter1">antipasto platter</string>
     <string name="antipasto_platter">Antipasto Platter</string>
     <string name="garlic_bread">Garlic Bread</string>
+    <string name="selected_pizza">Selected Pizza:</string>
+    <string name="price">Price:</string>
+    <string name="medium_3_99">medium + $3.99</string>
+    <string name="medium_n_3_99">Medium\n+ $3.99</string>
+    <string name="large_n_5_99">Large \n+ $5.99</string>
+    <string name="extra_large_n_7_99">Extra large \n + $7.99</string>
 </resources>
