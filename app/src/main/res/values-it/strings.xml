@@ -58,8 +58,8 @@
     <string name="toppings">Condimenti</string>
     <string name="grilled_chicken">Pollo Grigliato</string>
     <string name="number_of_pizza">Numero di pizze</string>
-    <string name="total_price">Prezzo Totale: </string>
-    <string name="totalitems">Articoli Totali: </string>
+    <string name="total_price">Prezzo Totale: %1$s</string>
+    <string name="totalitems">Articoli Totali: %1$d</string>
     <string name="clear">Azzera</string>
     <string name="checkout">Vai alla Cassa</string>
     <string name="stuffed_mushrooms">Funghi Ripieni</string>

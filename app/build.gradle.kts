@@ -6,6 +6,8 @@ android {
     namespace = "com.example.cheezytown"
     compileSdk = 36
 
+
+
     defaultConfig {
         applicationId = "com.example.wowpizza"
         minSdk = 32
@@ -29,6 +31,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    buildFeatures{
+        viewBinding = true
+    }
+
 }
 
 dependencies {

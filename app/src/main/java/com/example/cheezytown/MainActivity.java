@@ -7,43 +7,58 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import com.example.cheezytown.databinding.ActivityMainBinding;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-
+    private ActivityMainBinding binding;
     private final Map<Integer, Integer> pizzaPrice = new HashMap<>();
+    private final Map<Integer, Integer> pizzaName = new HashMap<>();
      LinearLayout selectedPizza = null;
      double selectedPizzaPrice;
     @SuppressLint({"DefaultLocale", "SetTextI18n"})
-    void selectPizza(LinearLayout clickedLayout){
+
+    NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
+    DecimalFormat formatDecimal = new DecimalFormat("#,###");
+
+
+    @SuppressLint("StringFormatMatches")
+    private void selectPizza(LinearLayout clickedLayout){
         if (selectedPizza != null){
             selectedPizza.setSelected(false);
         }
         clickedLayout.setSelected(true);
         selectedPizza = clickedLayout;
 
+        Integer nameId = pizzaName.get(clickedLayout.getId());
+        String selectedPizzaName;
+
+        if (nameId != null){
+            selectedPizzaName = getString(nameId);
+        }else {
+            selectedPizzaName = "Unknown Pizza";
+        }
+
         Integer price = pizzaPrice.get(clickedLayout.getId());
          selectedPizzaPrice = (price != null) ? price : 0;
 
-
-        TextView PizzaDis = findViewById(R.id.selectedPizzaDisplay);
-        PizzaDis.setText("You have selected what? this ninja");
-        TextView PizzaPriceDis = findViewById(R.id.selectedPizzaPrice);
-        PizzaPriceDis.setText(String.format("Price: $%.2f", selectedPizzaPrice));
-
+        TextView PizzaDis = binding.selectedPizzaDisplay;
+        PizzaDis.setText(getString(R.string.formated_selected_pizza, selectedPizzaName));
+        TextView PizzaPriceDis = binding.selectedPizzaPriceDis;
+        String formatedPrice = currencyFormat.format(selectedPizzaPrice);
+        PizzaPriceDis.setText(getString(R.string.formated_price, formatedPrice));
 
     }
 
@@ -51,27 +66,36 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
 
-        Button clearButton = findViewById(R.id.clearButton);
-        Button checkOut = findViewById(R.id.Checkout);
-        RadioGroup pizzaRadioGroupSize = findViewById(R.id.radioForPizzaSize);
-        CheckBox addGrilledChicken = findViewById(R.id.grilledChickenTopping);
-        CheckBox addMushroomTopping = findViewById(R.id.mushroomTopping);
-        CheckBox addExtraCheeseTopping = findViewById(R.id.extraCheeseTopping);
-        CheckBox addPepperoniTopping = findViewById(R.id.pepperoniTopping);
-        CheckBox addGroundBeefTopping = findViewById(R.id.groundBeefTopping);
-        CheckBox addBaconTopping = findViewById(R.id.baconTopping);
-        EditText numberOfPizzaInput = findViewById(R.id.pizzaQuantity);
-        TextView totalPriceDisplay = findViewById(R.id.totalPriceView);
-        TextView totalItemDisplay = findViewById(R.id.totalItemsView);
+
+
+        Button clearButton = binding.clearButton;
+        Button checkOut = binding.Checkout;
+        RadioGroup pizzaRadioGroupSize = binding.radioForPizzaSize;
+        CheckBox addGrilledChicken = binding.grilledChickenTopping;
+        CheckBox addMushroomTopping = binding.mushroomTopping;
+        CheckBox addExtraCheeseTopping = binding.extraCheeseTopping;
+        CheckBox addPepperoniTopping = binding.pepperoniTopping;
+        CheckBox addGroundBeefTopping = binding.groundBeefTopping;
+        CheckBox addBaconTopping = binding.baconTopping;
+        EditText numberOfPizzaInput = binding.pizzaQuantity;
+        TextView totalPriceDisplay = binding.totalPriceView;
+        TextView totalItemDisplay = binding.totalItemsView;
 
         pizzaPrice.put(R.id.margherita_pizza, 15);
         pizzaPrice.put(R.id.cheese, 12);
         pizzaPrice.put(R.id.pepperoni_pizza, 13);
         pizzaPrice.put(R.id.vegetariana, 10);
         pizzaPrice.put(R.id.quattro_formaggi, 14);
+
+        pizzaName.put(R.id.margherita_pizza, R.string.margherita);
+        pizzaName.put(R.id.cheese, R.string.cheese);
+        pizzaName.put(R.id.pepperoni_pizza, R.string.pepperoni);
+        pizzaName.put(R.id.vegetariana, R.string.vegetariana);
+        pizzaName.put(R.id.quattro_formaggi, R.string.quattro_formaggi);
 
         for (int id: pizzaPrice.keySet()){
             LinearLayout pizzaLayout = findViewById(id);
@@ -89,8 +113,8 @@ public class MainActivity extends AppCompatActivity {
                 addPepperoniTopping.setChecked(false);
                 addExtraCheeseTopping.setChecked(false);
                 addMushroomTopping.setChecked(false);
-                totalItemDisplay.setText("Total Items: ");
-                totalPriceDisplay.setText("Total Price: ");
+                totalItemDisplay.setText(R.string.totalitems);
+                totalPriceDisplay.setText(R.string.total_price);
                 pizzaRadioGroupSize.check(R.id.smallPizza);
 
                 Toast.makeText(MainActivity.this, "All filed are cleared", Toast.LENGTH_SHORT).show();
@@ -102,11 +126,11 @@ public class MainActivity extends AppCompatActivity {
 
         checkOut.setOnClickListener(new View.OnClickListener() {
             double totalPrice;
-            @SuppressLint({"DefaultLocale", "SetTextI18n"})
+            @SuppressLint({"DefaultLocale", "SetTextI18n", "StringFormatInvalid", "StringFormatMatches"})
             @Override
             public void onClick(View v) {
 
-                EditText numberOfPizzaInput = findViewById(R.id.pizzaQuantity);
+                EditText numberOfPizzaInput = binding.pizzaQuantity;
                 String input = numberOfPizzaInput.getText().toString();
                 int numberOfPizza = 0;
                 if (!input.isEmpty()){
@@ -116,18 +140,21 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "please select a valid pizza number", Toast.LENGTH_SHORT).show();
                     }
                 }
+                else {
+                    Toast.makeText(MainActivity.this, "please insert pizza quantity", Toast.LENGTH_SHORT).show();
+                }
 
 
-                RadioGroup pizzaRadioGroupSize = findViewById(R.id.radioForPizzaSize);
+                RadioGroup pizzaRadioGroupSize = binding.radioForPizzaSize;
                 int selectedPizzaSize = pizzaRadioGroupSize.getCheckedRadioButtonId();
 
 
-                CheckBox addGrilledChicken = findViewById(R.id.grilledChickenTopping);
-                CheckBox addMushroomTopping = findViewById(R.id.mushroomTopping);
-                CheckBox addExtraCheeseTopping = findViewById(R.id.extraCheeseTopping);
-                CheckBox addPepperoniTopping = findViewById(R.id.pepperoniTopping);
-                CheckBox addGroundBeefTopping = findViewById(R.id.groundBeefTopping);
-                CheckBox addBaconTopping = findViewById(R.id.baconTopping);
+                CheckBox addGrilledChicken = binding.grilledChickenTopping;
+                CheckBox addMushroomTopping = binding.mushroomTopping;
+                CheckBox addExtraCheeseTopping = binding.extraCheeseTopping;
+                CheckBox addPepperoniTopping = binding.pepperoniTopping;
+                CheckBox addGroundBeefTopping = binding.groundBeefTopping;
+                CheckBox addBaconTopping = binding.baconTopping;
 
                 ArrayList<String> toppings = new ArrayList<>();
 
@@ -137,6 +164,10 @@ public class MainActivity extends AppCompatActivity {
                 if (addPepperoniTopping.isChecked()) toppings.add("Pepperoni");
                 if (addGroundBeefTopping.isChecked()) toppings.add("GroundBeef");
                 if (addBaconTopping.isChecked()) toppings.add("Bacon");
+
+                if(selectedPizzaPrice == 0){
+                    Toast.makeText(MainActivity.this, "No pizza have been selected", Toast.LENGTH_SHORT).show();
+                }
 
                 if (selectedPizzaSize ==  R.id.smallPizza){
                     totalPrice = numberOfPizza * (selectedPizzaPrice + (toppings.size() * 0.5));
@@ -153,20 +184,18 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Please select a pizza size", Toast.LENGTH_SHORT).show();
                 }
 
-                TextView totalPriceDisplay = findViewById(R.id.totalPriceView);
-                totalPriceDisplay.setText(String.format("Total Price: $%.2f", totalPrice));
-                TextView totalItemDisplay = findViewById(R.id.totalItemsView);
-                totalItemDisplay.setText(String.format("Total item: %d" , numberOfPizza));
+                TextView totalDis = binding.totalPriceView;
+                String formatedTotalPrice = currencyFormat.format(totalPrice);
+                totalDis.setText(getString(R.string.formated_total_price, formatedTotalPrice));
+
+                TextView totalItem = binding.totalItemsView;
+                String formatedTotalItem =formatDecimal.format(numberOfPizza);
+                totalItem.setText(getString(R.string.formated_totalitems, formatedTotalItem));
+
+
 
 
             }
-        });
-
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
         });
 
     }
