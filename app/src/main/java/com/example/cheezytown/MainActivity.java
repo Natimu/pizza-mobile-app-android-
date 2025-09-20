@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button clearButton = binding.clearButton;
         Button checkOut = binding.Checkout;
+        Button increase = binding.increaseQuantity;
+        Button decrease = binding.decreaseQuantity;
         RadioGroup pizzaRadioGroupSize = binding.radioForPizzaSize;
         CheckBox addGrilledChicken = binding.grilledChickenTopping;
         CheckBox addMushroomTopping = binding.mushroomTopping;
@@ -84,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
         EditText numberOfPizzaInput = binding.pizzaQuantity;
         TextView totalPriceDisplay = binding.totalPriceView;
         TextView totalItemDisplay = binding.totalItemsView;
+        TextView selectedPizzaDis = binding.selectedPizzaDisplay;
+        TextView selectedPizzaPriceDis = binding.selectedPizzaPriceDis;
+
 
         pizzaPrice.put(R.id.margherita_pizza, 15);
         pizzaPrice.put(R.id.cheese, 12);
@@ -102,6 +107,18 @@ public class MainActivity extends AppCompatActivity {
             pizzaLayout.setOnClickListener(v -> selectPizza((LinearLayout) v));
         }
 
+        increase.setOnClickListener(v ->{
+            int current = Integer.parseInt(numberOfPizzaInput.getText().toString().isEmpty()? "0" : numberOfPizzaInput.getText().toString());
+            current++;
+            numberOfPizzaInput.setText(String.valueOf(current));
+        });
+
+        decrease.setOnClickListener(v ->{
+            int current = Integer.parseInt(numberOfPizzaInput.getText().toString().isEmpty()? "0" : numberOfPizzaInput.getText().toString());
+            if (current > 0) current--;
+            numberOfPizzaInput.setText(String.valueOf(current));
+        });
+
         clearButton.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
@@ -116,6 +133,9 @@ public class MainActivity extends AppCompatActivity {
                 totalItemDisplay.setText(R.string.totalitems);
                 totalPriceDisplay.setText(R.string.total_price);
                 pizzaRadioGroupSize.check(R.id.smallPizza);
+                selectedPizzaDis.setText(R.string.selected_pizza);
+                selectedPizzaPriceDis.setText(R.string.price);
+                selectedPizzaPrice = 0;
 
                 Toast.makeText(MainActivity.this, "All filed are cleared", Toast.LENGTH_SHORT).show();
 
@@ -130,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                EditText numberOfPizzaInput = binding.pizzaQuantity;
                 String input = numberOfPizzaInput.getText().toString();
                 int numberOfPizza = 0;
                 if (!input.isEmpty()){

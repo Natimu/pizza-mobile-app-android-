@@ -57,13 +57,11 @@
     <string name="becon">Becon</string>
     <string name="toppings">Toppings</string>
     <string name="grilled_chicken">Grilled Chicken</string>
-    <string name="number_of_pizza">Number of pizza</string>
     <string name="clear">Clear</string>
     <string name="checkout">Checkout</string>
     <string name="total_price">Total Price: </string>
     <string name="totalitems">Total Items: </string>
-    <string name="formated_total_price">Total Price: %1$s</string>
-    <string name="formated_totalitems">Total Items: %1$s</string>
+
     <string name="stuffed_mushrooms">Stuffed Mushrooms</string>
     <string name="stuffed_mushroomss">Stuffed Mushrooms</string>
     <string name="focaccia1">focaccia</string>
@@ -74,6 +72,8 @@
     <string name="antipasto_platter">Antipasto Platter</string>
     <string name="garlic_bread">Garlic Bread</string>
 
+    <string name="formated_total_price">Total Price: %1$s</string>
+    <string name="formated_totalitems">Total Items: %1$s</string>
     <string name="selected_pizza">Selected Pizza:</string>
     <string name="formated_selected_pizza">Selected Pizza: %s</string>
     <string name="price">Price:</string>
@@ -82,4 +82,7 @@
     <string name="medium_n_3_99">Medium\n+ $3.99</string>
     <string name="large_n_5_99">Large \n+ $5.99</string>
     <string name="extra_large_n_7_99">Extra large \n + $7.99</string>
+    <string name="increase">+</string>
+    <string name="decrease">-</string>
+    <string name="number_of_pizza">Quantity</string>
 </resources>

@@ -286,14 +286,49 @@
                                 android:text="@string/extra_large_n_7_99" />
                         </RadioGroup>
 
-                        <EditText
-                            android:id="@+id/pizzaQuantity"
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:autofillHints="@string/number_of_pizza"
-                            android:ems="10"
-                            android:hint="@string/number_of_pizza"
-                            android:inputType="number" />
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:padding="8dp">
+                            <Button
+                                android:id="@+id/decreaseQuantity"
+                                android:layout_width="30dp"
+                                android:layout_height="26dp"
+                                android:textSize="14sp"
+                                android:text="@string/decrease"
+                                android:layout_marginEnd="8dp"
+                               android:minWidth="0dp"
+                                android:minHeight="0dp"
+                                android:padding="0dp"
+                                android:backgroundTint="@color/text_color2"/>
+
+                            <EditText
+                                android:id="@+id/pizzaQuantity"
+                                android:layout_width="50dp"
+                                android:layout_height="36dp"
+                                android:layout_gravity="center"
+                                android:autofillHints="@string/number_of_pizza"
+                                android:hint="@string/number_of_pizza"
+                                android:textSize="11sp"
+                                android:textColorHint="@color/text_color3"
+                                android:inputType="number"
+                                android:backgroundTint="@color/text_color2"/>
+                            <Button
+                                android:id="@+id/increaseQuantity"
+                                android:layout_width="30dp"
+                                android:layout_height="26dp"
+                                android:textSize="14sp"
+                                android:text="@string/increase"
+                                android:layout_marginStart="8dp"
+                                android:minWidth="0dp"
+                                android:minHeight="0dp"
+                                android:padding="0dp"
+                                android:backgroundTint="@color/text_color2"/>
+                        </LinearLayout>
+
+
 
                     </LinearLayout>
                     <LinearLayout
