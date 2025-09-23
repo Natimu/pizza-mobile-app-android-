@@ -71,4 +71,17 @@
     <string name="antipastoplatter1">antipasto misto</string>
     <string name="antipasto_platter">Antipasto Misto</string>
     <string name="garlic_bread">Pane all\'Aglio</string>
+    <string name="formated_total_price">Prezzo totale: %1$s</string>
+    <string name="formated_totalitems">Totale articoli: %1$s</string>
+    <string name="selected_pizza">Pizza selezionata:</string>
+    <string name="formated_selected_pizza">Pizza selezionata: %s</string>
+    <string name="price">Prezzo:</string>
+    <string name="formated_price">Prezzo: %s</string>
+    <string name="medium_3_99">media + $3.99</string>
+    <string name="medium_n_3_99">Media\n+ $3.99</string>
+    <string name="large_n_5_99">Grande \n+ $5.99</string>
+    <string name="extra_large_n_7_99">Extra grande \n + $7.99</string>
+    <string name="increase">+</string>
+    <string name="decrease">-</string>
+
 </resources>
