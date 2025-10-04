@@ -33,6 +33,38 @@ public class MainActivity extends AppCompatActivity {
     NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
     DecimalFormat formatDecimal = new DecimalFormat("#,###");
 
+    public void clearAllFields() {
+        EditText numberOfPizzaInput = binding.pizzaQuantity;
+        CheckBox addBaconTopping = binding.baconTopping;
+        CheckBox addGroundBeefTopping = binding.groundBeefTopping;
+        CheckBox addGrilledChicken = binding.grilledChickenTopping;
+        CheckBox addPepperoniTopping = binding.pepperoniTopping;
+        CheckBox addExtraCheeseTopping = binding.extraCheeseTopping;
+        CheckBox addMushroomTopping = binding.mushroomTopping;
+        RadioGroup pizzaRadioGroupSize = binding.radioForPizzaSize;
+        TextView totalItemDisplay = binding.totalItemsView;
+        TextView totalPriceDisplay = binding.totalPriceView;
+        TextView selectedPizzaDis = binding.selectedPizzaDisplay;
+        TextView selectedPizzaPriceDis = binding.selectedPizzaPriceDis;
+
+        numberOfPizzaInput.setText("");
+        addBaconTopping.setChecked(false);
+        addGroundBeefTopping.setChecked(false);
+        addGrilledChicken.setChecked(false);
+        addPepperoniTopping.setChecked(false);
+        addExtraCheeseTopping.setChecked(false);
+        addMushroomTopping.setChecked(false);
+        totalItemDisplay.setText(R.string.totalitems);
+        totalPriceDisplay.setText(R.string.total_price);
+        pizzaRadioGroupSize.check(R.id.smallPizza);
+        selectedPizzaDis.setText(R.string.selected_pizza);
+        selectedPizzaPriceDis.setText(R.string.price);
+        selectedPizzaPrice = 0;
+
+        Toast.makeText(MainActivity.this, "All fields are cleared", Toast.LENGTH_SHORT).show();
+    }
+
+
 
     @SuppressLint("StringFormatMatches")
     private void selectPizza(LinearLayout clickedLayout){
@@ -119,29 +151,11 @@ public class MainActivity extends AppCompatActivity {
             numberOfPizzaInput.setText(String.valueOf(current));
         });
 
-        clearButton.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
-                numberOfPizzaInput.setText("");
-                addBaconTopping.setChecked(false);
-                addGroundBeefTopping.setChecked(false);
-                addGrilledChicken.setChecked(false);
-                addPepperoniTopping.setChecked(false);
-                addExtraCheeseTopping.setChecked(false);
-                addMushroomTopping.setChecked(false);
-                totalItemDisplay.setText(R.string.totalitems);
-                totalPriceDisplay.setText(R.string.total_price);
-                pizzaRadioGroupSize.check(R.id.smallPizza);
-                selectedPizzaDis.setText(R.string.selected_pizza);
-                selectedPizzaPriceDis.setText(R.string.price);
-                selectedPizzaPrice = 0;
-
-                Toast.makeText(MainActivity.this, "All filed are cleared", Toast.LENGTH_SHORT).show();
-
-
-            }
+        clearButton.setOnClickListener(v -> {
+            clearDialogFragment dialog = new clearDialogFragment();
+            dialog.show(getSupportFragmentManager(), "ClearDialog");
         });
+
 
 
         checkOut.setOnClickListener(new View.OnClickListener() {
@@ -210,10 +224,6 @@ public class MainActivity extends AppCompatActivity {
                 TextView totalItem = binding.totalItemsView;
                 String formatedTotalItem =formatDecimal.format(numberOfPizza);
                 totalItem.setText(getString(R.string.formated_totalitems, formatedTotalItem));
-
-
-
-
             }
         });
 
