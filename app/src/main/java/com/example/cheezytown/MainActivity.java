@@ -19,7 +19,6 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
@@ -176,7 +175,6 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     Toast.makeText(MainActivity.this, "please insert pizza quantity", Toast.LENGTH_SHORT).show();
                 }
-
 
                 RadioGroup pizzaRadioGroupSize = binding.radioForPizzaSize;
                 int selectedPizzaSize = pizzaRadioGroupSize.getCheckedRadioButtonId();
